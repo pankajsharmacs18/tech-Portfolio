@@ -1,3 +1,30 @@
+<script type="text/javascript">
+	// Initialize EmailJS with your Public Key
+	emailjs.init("OHjFlJtrVeuAL17Ty");  // Replace with your actual Public Key
+
+	// Handle form submission
+	document.getElementById('contactForm').addEventListener('submit', function(event) {
+		event.preventDefault();  // Prevent form from submitting the traditional way
+
+		// Get form data
+		const formData = {
+			name: document.getElementById('name').value,
+			email: document.getElementById('email').value,
+			subject: document.getElementById('subject').value,
+			message: document.getElementById('message').value
+		};
+
+		// Send email using EmailJS
+		emailjs.send("service_xfyoges", "template_k9yo6pl", formData)  // Replace with your actual Service ID and Template ID
+				.then(function(response) {
+					alert("Message sent successfully!");
+					// Optionally, reset the form
+					document.getElementById('contactForm').reset();
+				}, function(error) {
+					alert("Failed to send message. Please try again later.");
+				});
+	});
+</script>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -10,8 +37,10 @@
 
         <!--font-family-->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
-        
-        <!-- title of site -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+		<!-- title of site -->
         <title>Pankaj Sharma : Portfolio</title>
 
         <!-- For favicon png -->
@@ -66,12 +95,14 @@
 			        <div class="container">
 
 			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="index.html">PANKAJ SHARMA</a>
-			            </div><!--/.navbar-header-->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/logo/logo.png" alt="Logo" style="height: 60px; width: 100px; align-content: center;" />
+							</a>
+						</div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
 
 			            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +114,7 @@
 			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
 			                    <li class="smooth-menu"><a href="#profiles">profile</a></li>
 			                    <li class="smooth-menu"><a href="#portfolio">portfolio</a></li>
-			                    <li class="smooth-menu"><a href="#clients">clients</a></li>
+			                    <li class="smooth-menu"><a href="#clients">Technology</a></li>
 			                    <li class="smooth-menu"><a href="#contact">contact</a></li>
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
@@ -103,9 +134,9 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<div class="header-text">
-							<h2>Hi <span>,</span> I am <br> Pankaj Sharma <br> star <span>.</span>   </h2>
-							<p>ui/ux designer and web developer</p>
-							<a href="assets/download/browney.txt" download>download resume</a>
+							<h2>Hi <span>,</span> I am <br> Pankaj Sharma <span>.</span>   </h2>
+							<p>MERN/Full stack developer or web developer</p>
+							<a href="assets/download/pankaj_sharma_FullStack_Developer.pdf" download>download resume</a>
 						</div><!--/.header-text-->
 					</div><!--/.col-->
 				</div><!-- /.row-->
@@ -125,46 +156,48 @@
 						<div class="col-sm-6">
 							<div class="single-about-txt">
 								<h3>
-									I am a Professional UI/UX Designer and Web developer. Consectetur an adipose elita, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
+									Aspiring MERN and Django developer with expertise in React, Node.js, Django, Python, RESTful APIs, MongoDB, Material-UI, and testing frameworks like Selenium and Appium. Proficient in machine learning and data structures, committed to delivering scalable and efficient solutions
 								</h3>
-								<p>
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
+								<p>Aspiring MERN stack and Django developer with expertise in ReactJS, Node.js, Django, and Python. Skilled in building scalable web applications, designing secure RESTful APIs, and managing data pipelines. Proficient in data structures, algorithms, and testing frameworks like Selenium and Appium. Adept at leveraging technologies like MongoDB, Material-UI, and Luigi to optimize performance. With certifications in Machine Learning, Cybersecurity, and Python, committed to delivering innovative and efficient solutions in dynamic software environments.
 								</p>
+								<!-- Contact Details start -->
 								<div class="row">
 									<div class="col-sm-4">
 										<div class="single-about-add-info">
 											<h3>phone</h3>
-											<p>987-123-6547</p>
+										<p>	<a href="tel:+919458512418">+91 9458512418</a></p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="single-about-add-info">
 											<h3>email</h3>
-											<p>browny@info.com</p>
+											<p><a href="mailto:pankajtza@gmail.com">pankajtza@gmail.com</a></p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="single-about-add-info">
 											<h3>website</h3>
-											<p>www.brownsine.com</p>
+											<p>	<a href="https://pankajsharmacs18.github.io/tech-Portfolio/" target="_blank" rel="noopener noreferrer">Press Me for Web</a> </p>
 										</div>
 									</div>
 								</div>
+								<!-- Contact Details start -->
 							</div>
 						</div>
 						<div class="col-sm-offset-1 col-sm-5">
 							<div class="single-about-img">
-								<img src="assets/images/about/profile_image.jpg" alt="profile_image">
+								<img src="assets/images/about/img.png" alt="profile_image">
 								<div class="about-list-icon">
 									<ul>
 										<li>
-											<a href="#">
-												<i  class="fa fa-facebook" aria-hidden="true"></i>
+											<a href="https://www.hackerrank.com/pankajsharmacs18" target="_blank">
+												<i class='fab fa-hackerrank' style='color:greenyellow'></i>
+
 											</a>
 										</li><!-- / li -->
 										<li>
-											<a href="#">
-												<i  class="fa fa-dribbble" aria-hidden="true"></i>
+											<a href="https://pankajsharmacs18.github.io/tech-Portfolio/" target="_blank">
+												<i  class="fa fa-internet-explorer" aria-hidden="true"></i>
 											</a>
 											
 										</li><!-- / li -->
@@ -175,13 +208,13 @@
 											
 										</li><!-- / li -->
 										<li>
-											<a href="#">
-												<i  class="fa fa-linkedin" aria-hidden="true"></i>
+											<a href="https://www.linkedin.com/in/pankajsharmacs18/" target="_blank">
+												<i  class="fa fa-linkedin" style="color:blue;" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
 										<li>
-											<a href="#">
-												<i  class="fa fa-instagram" aria-hidden="true"></i>
+											<a href="https://github.com/pankajsharmacs18" target="_blank">
+												<i  class="fa fa-github" style="color: black;" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
 										
@@ -209,8 +242,9 @@
 						<div class="col-sm-4">
 							<div class="single-horizontal-timeline">
 								<div class="experience-time">
-									<h2>2008 - 2010</h2>
-									<h3>master <span>of </span> computer science</h3>
+									<h2>2018 - 2016</h2>
+									<h2>Bachelor <span>of </span> Technology</h2>
+									<p>Computer science and Engineering</p>
 								</div><!--/.experience-time-->
 								<div class="timeline-horizontal-border">
 									<i class="fa fa-circle" aria-hidden="true"></i>
@@ -219,12 +253,11 @@
 								<div class="timeline">
 									<div class="timeline-content">
 										<h4 class="title">
-											university of north carolina
+											GLA University, Mathura
 										</h4>
-										<h5>north carolina, USA</h5>
+										<h5>Uttar Pradesh, India</h5>
 										<p class="description">
-											Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-										</p>
+											A Bachelor of Technology (B.Tech) in Computer Science and Engineering is an undergraduate program that provides knowledge in computer systems, programming, algorithms, data structures, and software development, preparing students for technology-driven career.										</p>
 									</div><!--/.timeline-content-->
 								</div><!--/.timeline-->
 							</div>
@@ -232,8 +265,9 @@
 						<div class="col-sm-4">
 							<div class="single-horizontal-timeline">
 								<div class="experience-time">
-									<h2>2004 - 2008</h2>
-									<h3>bachelor <span>of </span> computer science</h3>
+									<h2>2016-2017</h2>
+									<h4>Intermediate (Senior Secondary)</h4>
+									<p>Physics, Chemistry, Mathematics</p>
 								</div><!--/.experience-time-->
 								<div class="timeline-horizontal-border">
 									<i class="fa fa-circle" aria-hidden="true"></i>
@@ -242,12 +276,11 @@
 								<div class="timeline">
 									<div class="timeline-content">
 										<h4 class="title">
-											university of north carolina
+											Varshney Inter collage,Bahjoi
 										</h4>
-										<h5>north carolina, USA</h5>
+										<h5>Sambhal,U.P. (India)</h5>
 										<p class="description">
-											Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-										</p>
+											he Intermediate Uttar Pradesh Board for PCM (Physics, Chemistry, and Mathematics) is a two-year educational program that prepares students for higher education in engineering, technology, and other science-related fields. It covers fundamental concepts in physics, chemistry, and mathematics, equipping students with the necessary knowledge for competitive exams and future careers in STEM fields.										</p>
 									</div><!--/.timeline-content-->
 								</div><!--/.timeline-->
 							</div>
@@ -255,23 +288,22 @@
 						<div class="col-sm-4">
 							<div class="single-horizontal-timeline">
 								<div class="experience-time">
-									<h2>2004 - 2008</h2>
-									<h3>bachelor <span>of </span> creative design</h3>
+									<h2>2014-2015</h2>
+									<h4>High School</h4>
+									<p>Uttar Pradesh Education Board</p>
 								</div><!--/.experience-time-->
 								<div class="timeline-horizontal-border">
 									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal spacial-horizontal-line
-									"></span>
+									<span class="single-timeline-horizontal spacial-horizontal-line"></span>
 								</div>
 								<div class="timeline">
 									<div class="timeline-content">
 										<h4 class="title">
-											university of bolton
+											Shiv devi Inter collage, Bahjoi
 										</h4>
-										<h5>bolton, united kingdome</h5>
+										<h5>Sambhal ,U.P.(India)</h5>
 										<p class="description">
-											Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-										</p>
+											The High School Uttar Pradesh Board for PCM (Physics, Chemistry, and Mathematics) is a foundational educational program that focuses on core subjects in science and mathematics. It prepares students for further studies in science, engineering, and technology, laying the groundwork for future academic and career pursuits.										</p>
 									</div><!--/.timeline-content-->
 								</div><!--/.timeline-->
 							</div>
@@ -294,7 +326,7 @@
 							<div class="col-md-6">
 								<div class="single-skill-content">
 									<div class="barWrapper">
-										<span class="progressText">adobe photoshop</span>
+										<span class="progressText">Python programming language</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
@@ -305,7 +337,7 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-										<span class="progressText">adobe illustrator</span>
+										<span class="progressText">Java programming language</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 											   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
@@ -316,7 +348,7 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-										<span class="progressText">adobe after effects</span>
+										<span class="progressText">Data structure and algorithms</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 											   <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
@@ -327,18 +359,86 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-										<span class="progressText">sketch</span>
+										<span class="progressText">NodeJs</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 											   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
-												    
+
 											   </div>
 											</div>
 											<h3>90%</h3>	
 										</div>
 									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">ExpressJs</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>90%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">ReactJs</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>90%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">MongoDb</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>60%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">Django</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>90%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">SQL</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>70%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText">DBMS</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>75%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+
 								</div>
 							</div>
+
 							<div class="col-md-6">
 								<div class="single-skill-content">
 									<div class="barWrapper">
@@ -352,6 +452,8 @@
 											<h3>90%</h3>	
 										</div>
 									</div><!-- /.barWrapper -->
+
+
 									<div class="barWrapper">
 										<span class="progressText">css 3 animation</span>
 										<div class="single-progress-txt">
@@ -385,6 +487,72 @@
 											<h3>90%</h3>	
 										</div>
 									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText"> Time Management</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>90%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+										<span class="progressText"> Quality Assurance</span>
+										<div class="single-progress-txt">
+											<div class="progress ">
+												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+												</div>
+											</div>
+											<h3>90%</h3>
+										</div>
+									</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+									<span class="progressText"> Automation Testing</span>
+									<div class="single-progress-txt">
+										<div class="progress ">
+											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+											</div>
+										</div>
+										<h3>90%</h3>
+									</div>
+								</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+									<span class="progressText"> Machine Learning</span>
+									<div class="single-progress-txt">
+										<div class="progress ">
+											<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
+
+											</div>
+										</div>
+										<h3>60%</h3>
+									</div>
+								</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+									<span class="progressText">Analytical </span>
+									<div class="single-progress-txt">
+										<div class="progress ">
+											<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="10" aria-valuemax="100" style="">
+
+											</div>
+										</div>
+										<h3>80%</h3>
+									</div>
+								</div><!-- /.barWrapper -->
+									<div class="barWrapper">
+									<span class="progressText"> Problem solving</span>
+									<div class="single-progress-txt">
+										<div class="progress ">
+											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+
+											</div>
+										</div>
+										<h3>90%</h3>
+									</div>
+								</div><!-- /.barWrapper -->
 								</div>
 							</div>
 						</div><!-- /.row -->
@@ -408,8 +576,8 @@
 										<div class="row">
 											<div class="col-md-5">
 												<div class="experience-time text-right">
-													<h2>2018 - Present</h2>
-													<h3>creative director</h3>
+													<h2>2022 - Present</h2>
+													<h3>Software Engineer</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 											<div class="col-md-offset-1 col-md-5">
@@ -417,12 +585,11 @@
 													<div class="timeline-content">
 														<h4 class="title">
 															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															hoplony tech limited
+															<span style="color: blue">Conexus Tech Labs Pvt.Ltd.</span>
 														</h4>
-														<h5>newyork, USA</h5>
+														<h5>Delhi, India</h5>
 														<p class="description">
-															Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-														</p>
+															Developed a cutting-edge PB Bank admin dashboard using React.js, Material-UI, Node.js, and Express.js, streamlining user and banking operations. Enhanced features and optimized code with MERN stack integration. Implemented real-time data storage with MongoDB and designed robust, secure RESTful APIs for seamless frontend-backend communication. Conducted rigorous manual and automated testing using Java, Selenium, and Appium, ensuring cross-platform mobile automation testing for Android and iOS. Delivered high-performance, scalable solutions to elevate user experience and operational efficiency.														</p>
 													</div><!--/.timeline-content-->
 												</div><!--/.timeline-->
 											</div><!--/.col-->
@@ -437,21 +604,20 @@
 												<div class="experience-time">
 													<h2>
 														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2016 - 2018
+														2021-2022
 													</h2>
-													<h3>associate design director</h3>
+													<h3>Associate Software engineer</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 											<div class="col-md-5">
 												<div class="timeline">
 													<div class="timeline-content text-right">
 														<h4 class="title">
-															hoplony tech limited
+														<span style="color: blue">Colaborar Labs Pvt.Ltd.</span>
 														</h4>
-														<h5>newyork, USA</h5>
+														<h5>Noida,India</h5>
 														<p class="description">
-															Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-														</p>
+															Implemented Python (Luigi, Django, AWS) for a financial project, optimizing backend storage and data pipeline management for seamless data processing. Developed secure Django APIs with robust authentication, integrated ReactJS for a dynamic UI, and applied efficient algorithms to enhance functionality, ensuring secure financial data management.														</p>
 													</div><!--/.timeline-content-->
 												</div><!--/.timeline-->
 											</div><!--/.col-->
@@ -459,9 +625,9 @@
 												<div class="experience-time">
 													<h2>
 														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2016 - 2018
+														2021 - 2022
 													</h2>
-													<h3>associate design director</h3>
+													<h3>Associate Software engineer </h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 										</div>
@@ -473,8 +639,8 @@
 										<div class="row">
 											<div class="col-md-5">
 												<div class="experience-time text-right">
-													<h2>2013 - 2016</h2>
-													<h3>senior UI/UX designer</h3>
+													<h2>2021 - 2021</h2>
+													<h3>Machine Learning Intern</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 											<div class="col-md-offset-1 col-md-5">
@@ -482,12 +648,11 @@
 													<div class="timeline-content">
 														<h4 class="title">
 															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															hoplony tech limited
+															<span style="color: blue">HireSure.ai</span>
 														</h4>
-														<h5>newyork, USA</h5>
+														<h5>Bangalore ,India</h5>
 														<p class="description">
-															Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-														</p>
+															Designed a Django-based chatbot, enhancing user interaction and experience at a product-based company. Trained ML models, performed data cleaning, and supported the team in building a robust product. Developed utility methods to improve efficiency during an internship, contributing to streamlined operations and product development.														</p>
 													</div><!--/.timeline-content-->
 												</div><!--/.timeline-->
 											</div><!--/.col-->
@@ -502,20 +667,19 @@
 												<div class="experience-time">
 													<h2>
 														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2012 - 2013
+														2019 - 2021
 													</h2>
-													<h3>UI/UX designer</h3>
+													<h3>project Associate</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 											<div class="col-md-5">
 												<div class="timeline">
 													<div class="timeline-content text-right">
 														<h4 class="title">
-															hoplony tech limited
+														<span style="color: blue">Dysmetch consultancy Service (DCS) Pvt. Ltd.</span>
 														</h4>
-														<h5>newyork, USA</h5>
-														<p class="description">
-															Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
+														<h5>Pune,India</h5>
+														<p class="description">I collaborated with the team on machine learning and automation projects using Arduino and Raspberry Pi. I contributed to several projects, including home automation, smart genset, smart dustbin, and smart auto switch light. My role involved simulating hardware, implementing code for these systems, and assisting with hardware assembly to complete the projects efficiently. I worked closely with the team to ensure successful execution and integration of hardware and software components.
 														</p>
 													</div><!--/.timeline-content-->
 												</div><!--/.timeline-->
@@ -524,9 +688,9 @@
 												<div class="experience-time">
 													<h2>
 														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2012 - 2013
+														2019-2021
 													</h2>
-													<h3>UI/UX designer</h3>
+													<h3>Project Associates</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 										</div>
@@ -538,8 +702,8 @@
 										<div class="row">
 											<div class="col-md-5">
 												<div class="experience-time text-right">
-													<h2>2010 - 2012</h2>
-													<h3>frontend developer</h3>
+													<h2>2018 - 2019</h2>
+													<h3>Machine Learning Trainee</h3>
 												</div><!--/.experience-time-->
 											</div><!--/.col-->
 											<div class="col-md-offset-1 col-md-5">
@@ -547,12 +711,11 @@
 													<div class="timeline-content">
 														<h4 class="title">
 															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															hoplony tech limited
+															<span style="color: blue"> Analytics Vidhya Pvt.Ltd.</span>
 														</h4>
-														<h5>newyork, USA</h5>
+														<h5>Gurugram,India</h5>
 														<p class="description">
-															Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident. 
-														</p>
+															This 6-month online machine learning course covers everything from basics to advanced concepts. Learn supervised and unsupervised algorithms (e.g., Linear Regression, Decision Trees, KNN), deep learning (CNN, RNN) using TensorFlow, Keras, and scikit-learn. Work on real-world projects to build expertise.														</p>
 													</div><!--/.timeline-content-->
 												</div><!--/.timeline-->
 											</div><!--/.col-->
@@ -823,7 +986,7 @@
 		<!--contact start -->
 		<section id="contact" class="contact">
 			<div class="section-heading text-center">
-				<h2>contact me</h2>
+				<h2>Contact Me</h2>
 			</div>
 			<div class="container">
 				<div class="contact-content">
@@ -831,82 +994,49 @@
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form>
+									<form id="contactForm">
 										<div class="row">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
-												  <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
+													<input type="text" class="form-control" id="name" placeholder="Name*" name="name" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
-													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+													<input type="email" class="form-control" id="email" placeholder="Email*" name="email" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
+													<textarea class="form-control" rows="8" id="message" placeholder="Message" name="message" required></textarea>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="single-contact-btn">
-													<a class="contact-btn" href="#" role="button">submit</a>
-												</div><!--/.single-single-contact-btn-->
+													<button type="submit" class="submit-btn">Submit</button>
+												</div><!--/.single-contact-btn-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 									</form><!--/form-->
 								</div><!--/.contact-form-->
 							</div><!--/.single-contact-box-->
 						</div><!--/.col-->
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-adress">
-									<div class="contact-add-head">
-										<h3>browny star</h3>
-										<p>uI/uX designer</p>
-									</div>
-									<div class="contact-add-info">
-										<div class="single-contact-add-info">
-											<h3>phone</h3>
-											<p>987-123-6547</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>email</h3>
-											<p>browny@info.com</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>website</h3>
-											<p>www.brownsine.com</p>
-										</div>
-									</div>
-								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-dribbble"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
 					</div><!--/.row-->
 				</div><!--/.contact-content-->
 			</div><!--/.container-->
-
 		</section><!--/.contact-->
+
 		<!--contact end -->
 
 		<!--footer-copyright start-->
@@ -914,7 +1044,7 @@
 			<div class="container">
 				<div class="hm-footer-copyright text-center">
 					<p>
-						&copy; copyright yourname. design and developed by <a href="https://www.themesine.com/">themesine</a>
+						&copy; copyright Pankaj Sharma. design and developed by Pankaj Sharma
 					</p><!--/p-->
 				</div><!--/.text-center-->
 			</div><!--/.container-->
