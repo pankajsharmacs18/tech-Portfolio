@@ -1,3 +1,30 @@
+<script type="text/javascript">
+	// Initialize EmailJS with your Public Key
+	emailjs.init("OHjFlJtrVeuAL17Ty");  // Replace with your actual Public Key
+
+	// Handle form submission
+	document.getElementById('contactForm').addEventListener('submit', function(event) {
+		event.preventDefault();  // Prevent form from submitting the traditional way
+
+		// Get form data
+		const formData = {
+			name: document.getElementById('name').value,
+			email: document.getElementById('email').value,
+			subject: document.getElementById('subject').value,
+			message: document.getElementById('message').value
+		};
+
+		// Send email using EmailJS
+		emailjs.send("service_xfyoges", "template_k9yo6pl", formData)  // Replace with your actual Service ID and Template ID
+				.then(function(response) {
+					alert("Message sent successfully!");
+					// Optionally, reset the form
+					document.getElementById('contactForm').reset();
+				}, function(error) {
+					alert("Failed to send message. Please try again later.");
+				});
+	});
+</script>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -11,6 +38,7 @@
         <!--font-family-->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 		<!-- title of site -->
         <title>Pankaj Sharma : Portfolio</title>
@@ -86,7 +114,7 @@
 			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
 			                    <li class="smooth-menu"><a href="#profiles">profile</a></li>
 			                    <li class="smooth-menu"><a href="#portfolio">portfolio</a></li>
-			                    <li class="smooth-menu"><a href="#clients">Skill</a></li>
+			                    <li class="smooth-menu"><a href="#clients">Technology</a></li>
 			                    <li class="smooth-menu"><a href="#contact">contact</a></li>
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
@@ -460,7 +488,7 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-										<span class="progressText"> creativity</span>
+										<span class="progressText"> Time Management</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
@@ -471,7 +499,7 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-										<span class="progressText"> creativity</span>
+										<span class="progressText"> Quality Assurance</span>
 										<div class="single-progress-txt">
 											<div class="progress ">
 												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
@@ -482,7 +510,7 @@
 										</div>
 									</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-									<span class="progressText"> creativity</span>
+									<span class="progressText"> Automation Testing</span>
 									<div class="single-progress-txt">
 										<div class="progress ">
 											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
@@ -493,29 +521,29 @@
 									</div>
 								</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-									<span class="progressText"> creativity</span>
+									<span class="progressText"> Machine Learning</span>
 									<div class="single-progress-txt">
 										<div class="progress ">
-											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+											<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
 
 											</div>
 										</div>
-										<h3>90%</h3>
+										<h3>60%</h3>
 									</div>
 								</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-									<span class="progressText"> creativity</span>
+									<span class="progressText">Analytical </span>
 									<div class="single-progress-txt">
 										<div class="progress ">
-											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+											<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="10" aria-valuemax="100" style="">
 
 											</div>
 										</div>
-										<h3>90%</h3>
+										<h3>80%</h3>
 									</div>
 								</div><!-- /.barWrapper -->
 									<div class="barWrapper">
-									<span class="progressText"> creativity</span>
+									<span class="progressText"> Problem solving</span>
 									<div class="single-progress-txt">
 										<div class="progress ">
 											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
@@ -958,7 +986,7 @@
 		<!--contact start -->
 		<section id="contact" class="contact">
 			<div class="section-heading text-center">
-				<h2>contact me</h2>
+				<h2>Contact Me</h2>
 			</div>
 			<div class="container">
 				<div class="contact-content">
@@ -966,82 +994,49 @@
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form>
+									<form id="contactForm">
 										<div class="row">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
-												  <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
+													<input type="text" class="form-control" id="name" placeholder="Name*" name="name" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
-													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+													<input type="email" class="form-control" id="email" placeholder="Email*" name="email" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
+													<textarea class="form-control" rows="8" id="message" placeholder="Message" name="message" required></textarea>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="single-contact-btn">
-													<a class="contact-btn" href="#" role="button">submit</a>
-												</div><!--/.single-single-contact-btn-->
+													<button type="submit" class="submit-btn">Submit</button>
+												</div><!--/.single-contact-btn-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 									</form><!--/form-->
 								</div><!--/.contact-form-->
 							</div><!--/.single-contact-box-->
 						</div><!--/.col-->
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-adress">
-									<div class="contact-add-head">
-										<h3>browny star</h3>
-										<p>uI/uX designer</p>
-									</div>
-									<div class="contact-add-info">
-										<div class="single-contact-add-info">
-											<h3>phone</h3>
-											<p>987-123-6547</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>email</h3>
-											<p>browny@info.com</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>website</h3>
-											<p>www.brownsine.com</p>
-										</div>
-									</div>
-								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-dribbble"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
 					</div><!--/.row-->
 				</div><!--/.contact-content-->
 			</div><!--/.container-->
-
 		</section><!--/.contact-->
+
 		<!--contact end -->
 
 		<!--footer-copyright start-->
@@ -1049,7 +1044,7 @@
 			<div class="container">
 				<div class="hm-footer-copyright text-center">
 					<p>
-						&copy; copyright yourname. design and developed by <a href="https://www.themesine.com/">themesine</a>
+						&copy; copyright Pankaj Sharma. design and developed by Pankaj Sharma
 					</p><!--/p-->
 				</div><!--/.text-center-->
 			</div><!--/.container-->
